@@ -190,7 +190,7 @@ class BerlinClockTest extends TestCase
     }
 
     //SECONDS
-    public function testGetBerlinSeconds0ShouldReturnR()
+    public function testGetBerlinSeconds0ShouldReturnO()
     {
         // Arrange
         $berlinClock = new BerlinClock();
@@ -199,7 +199,7 @@ class BerlinClockTest extends TestCase
         $actual = $berlinClock->getBerlinSeconds(0);
 
         // Assert
-        $this->assertEquals("R", $actual);
+        $this->assertEquals("J", $actual);
     }
     public function testGetBerlinSeconds59ShouldReturnO()
     {
@@ -211,6 +211,18 @@ class BerlinClockTest extends TestCase
 
         // Assert
         $this->assertEquals("O", $actual);
+    }
+    //BERLINCLOCK
+    public function testgetBerlinClock010550()
+    {
+        // Arrange
+        $berlinClock = new BerlinClock();
+
+        // Act
+        $actual = $berlinClock->getBerlinClock("01:05:50");
+
+        // Assert
+        $this->assertEquals("J\nOOOO\nROOO\nJOOOOOOOOOO\nOOOO", $actual);
     }
 
 }

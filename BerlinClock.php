@@ -73,10 +73,19 @@ class BerlinClock {
     }
     public function getBerlinSeconds(int $second):String {
         if($second % 2 == 0) {
-            return "R";
+            return "J";
         }
         return "O";
         }
+    public function getBerlinClock (String $timeToConvert):String {
+
+        $berlinTime = $this->getBerlinSeconds(50)."\n";
+        $berlinTime .= $this->getBerlinHours(01)."\n";
+        $berlinTime .= $this->getBerlinMinutes(05);
+
+        return $berlinTime;
+
+    }
 
 
 }
