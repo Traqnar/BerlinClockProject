@@ -28,6 +28,7 @@ class BerlinClock {
                 $berlinMin.="O";
             }
         }
+
         $berlinMin .= "\n";
 
         for ($i=0 ; $i<4 ; $i++){
@@ -38,6 +39,7 @@ class BerlinClock {
                 $berlinMin.="O";
             }
         }
+
         return $berlinMin;
 
     }
