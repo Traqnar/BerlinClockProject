@@ -8,7 +8,7 @@ class BerlinClock {
     {
 
         if($minute == 0)
-            return "OOOOOOOOOOO OOOO";
+            return "OOOOOOOOOOO\nOOOO";
 
 
         $simpleMin=$minute%5;
