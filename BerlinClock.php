@@ -47,7 +47,21 @@ class BerlinClock {
         if($hour==0){
             return "OOOO\nOOOO";
         }
-        return 0;
+        $berlinHour="OOOO\n";
+        $simpleHours=$hour%5;
+
+        for ($i=0 ; $i<4 ; $i++){
+            if($simpleHours>0){
+                $berlinHour.="R";
+                $simpleHours--;
+            }else {
+                $berlinHour .= "O";
+            }
+        }
+
+
+        return $berlinHour;
     }
+
 
 }
