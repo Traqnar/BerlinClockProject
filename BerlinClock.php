@@ -79,9 +79,9 @@ class BerlinClock {
         }
     public function getBerlinClock (String $timeToConvert):String {
 
-        $berlinTime = $this->getBerlinSeconds(50)."\n";
-        $berlinTime .= $this->getBerlinHours(01)."\n";
-        $berlinTime .= $this->getBerlinMinutes(05);
+        $berlinTime = $this->getBerlinSeconds((int) substr($timeToConvert,6,2))."\n";
+        $berlinTime .= $this->getBerlinHours((int) substr($timeToConvert,0,2))."\n";
+        $berlinTime .= $this->getBerlinMinutes((int) substr($timeToConvert,3,2));
 
         return $berlinTime;
 
