@@ -47,9 +47,19 @@ class BerlinClock {
         if($hour==0){
             return "OOOO\nOOOO";
         }
-        $berlinHour="OOOO\n";
+        $berlinHour="";
         $simpleHours=$hour%5;
+        $berlinBloc5Hours=floor($hour/5);
 
+        for ($i=0; $i<4;$i++){
+            if($berlinBloc5Hours>0){
+                $berlinHour.="R";
+                $berlinBloc5Hours--;
+            }else{
+                $berlinHour.="O";
+            }
+        }
+        $berlinHour.="\n";
         for ($i=0 ; $i<4 ; $i++){
             if($simpleHours>0){
                 $berlinHour.="R";
@@ -58,7 +68,6 @@ class BerlinClock {
                 $berlinHour .= "O";
             }
         }
-
 
         return $berlinHour;
     }
