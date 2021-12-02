@@ -3,7 +3,8 @@ use PHPUnit\Framework\TestCase;
 require 'BerlinClock.php';
 class BerlinClockTest extends TestCase
 {
-    public function testGetBerlinMinutes0ShouldReturn15x0()
+    //BELOW5MIN
+    public function testGetBerlinMinutes0ShouldReturn15xO()
     {
         // Arrange
         $berlinClock = new BerlinClock();
@@ -14,7 +15,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("OOOOOOOOOOO\nOOOO", $actual);
     }
-
     public function testGetBerlinMinutes1ShouldReturn11x0And1xJAnd3xO()
     {
         // Arrange
@@ -26,7 +26,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("OOOOOOOOOOO\nJOOO", $actual);
     }
-
     public function testGetBerlinMinutes2ShouldReturn11x0And2xJAnd2xO()
     {
         // Arrange
@@ -38,7 +37,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("OOOOOOOOOOO\nJJOO", $actual);
     }
-
     public function testGetBerlinMinutes3ShouldReturn11x0And3xJAnd1xO()
     {
         // Arrange
@@ -50,7 +48,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("OOOOOOOOOOO\nJJJO", $actual);
     }
-
     public function testGetBerlinMinutes4ShouldReturn11x0And4xJAnd0xO()
     {
         // Arrange
@@ -63,6 +60,7 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("OOOOOOOOOOO\nJJJJ", $actual);
     }
 
+    //ABOVE5MIN
 
     public function testGetBerlinMinutes16ShouldReturn2xJAnd1xRAnd8xOAnd1xJAnd3xO()
     {
@@ -98,7 +96,18 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("JJRJJRJJRJO\nOOOO", $actual);
     }
 
+    //BELOW5HOURS
+    public function testGetBerlinHours0ShouldReturn8xO()
+    {
+        // Arrange
+        $berlinClock = new BerlinClock();
 
+        // Act
+        $actual = $berlinClock->getBerlinHours(0);
 
+        // Assert
+        $this->assertEquals("OOOO\nOOOO", $actual);
+    }
 
+    //ABOVE5HOURS
 }

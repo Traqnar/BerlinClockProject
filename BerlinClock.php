@@ -43,4 +43,11 @@ class BerlinClock {
         return $berlinMin;
 
     }
+    public function getBerlinHours(int $hour):String {
+        if($hour==0){
+            return "OOOO\nOOOO";
+        }
+        return 0;
+    }
+
 }
