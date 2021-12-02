@@ -201,5 +201,16 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("R", $actual);
     }
+    public function testGetBerlinSeconds59ShouldReturnO()
+    {
+        // Arrange
+        $berlinClock = new BerlinClock();
+
+        // Act
+        $actual = $berlinClock->getBerlinSeconds(59);
+
+        // Assert
+        $this->assertEquals("O", $actual);
+    }
 
 }
