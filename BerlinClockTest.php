@@ -170,4 +170,16 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("ROOO\nOOOO", $actual);
     }
+
+    public function testGetBerlinHours14ShouldReturn2xRAnd2xOAnd4xR()
+    {
+        // Arrange
+        $berlinClock = new BerlinClock();
+
+        // Act
+        $actual = $berlinClock->getBerlinHours(14);
+
+        // Assert
+        $this->assertEquals("RROO\nRRRR", $actual);
+    }
 }
