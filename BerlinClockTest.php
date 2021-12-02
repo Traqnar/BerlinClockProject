@@ -119,7 +119,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("OOOO\nROOO", $actual);
     }
-
     public function testGetBerlinHours2ShouldReturn4xOAnd2xRAnd2xO()
     {
         // Arrange
@@ -131,7 +130,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("OOOO\nRROO", $actual);
     }
-
     public function testGetBerlinHours3ShouldReturn4xOAnd3xRAnd1xO()
     {
         // Arrange
@@ -143,7 +141,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("OOOO\nRRRO", $actual);
     }
-
     public function testGetBerlinHours4ShouldReturn4xOAnd4xR()
     {
         // Arrange
@@ -158,7 +155,6 @@ class BerlinClockTest extends TestCase
 
 
     //ABOVE5HOURS
-
     public function testGetBerlinHours5ShouldReturn1xRAnd3xOAnd4xO()
     {
         // Arrange
@@ -170,7 +166,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("ROOO\nOOOO", $actual);
     }
-
     public function testGetBerlinHours14ShouldReturn2xRAnd2xOAnd4xR()
     {
         // Arrange
@@ -182,7 +177,6 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("RROO\nRRRR", $actual);
     }
-
     public function testGetBerlinHours21ShouldReturn4xRAnd1xRAnd3xO()
     {
         // Arrange
@@ -194,4 +188,18 @@ class BerlinClockTest extends TestCase
         // Assert
         $this->assertEquals("RRRR\nROOO", $actual);
     }
+
+    //SECONDS
+    public function testGetBerlinSeconds0ShouldReturnR()
+    {
+        // Arrange
+        $berlinClock = new BerlinClock();
+
+        // Act
+        $actual = $berlinClock->getBerlinSeconds(0);
+
+        // Assert
+        $this->assertEquals("R", $actual);
+    }
+
 }

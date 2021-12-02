@@ -71,6 +71,12 @@ class BerlinClock {
 
         return $berlinHour;
     }
+    public function getBerlinSeconds(int $second):String {
+        if($second % 2 == 0) {
+            return "R";
+        }
+        return "O";
+        }
 
 
 }
